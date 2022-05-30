@@ -6,7 +6,7 @@ import cors from 'cors';
 app.use(cors());
 
 app.get('/', (req, res) => {
-	const { q } = req.query;
+	const { q } = req.query; // for ?=query
 
 	const keys = ['first_name', 'last_name', 'email'];
 
@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 	// For MONGODB example
 	// const users = User.find({$regex: q})
 
+	// for showing only 10 record  in list
 	q ? res.json(search(Users).slice(0, 10)) : res.json(Users.slice(0, 10));
 });
 

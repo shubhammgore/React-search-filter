@@ -67,6 +67,7 @@ function App() {
 			const res = await axios.get(`http://localhost:5000?q=${query}`);
 			setData(res.data);
 		};
+		// this condition for start search after 2 char.
 		if (query.length === 0 || query.length > 2) fetchUsers();
 	}, [query]);
 
